@@ -1,8 +1,9 @@
+#This script requires the "tools" package to check the md5sum to validate the the file hasn't been modified.
+library("tools")
+
 #check to see if the file doesn't exist in the working directory or doesn't have the correct checksum.  
 #If either is true, download and extract the file and procede to load it
-filechecksum <- "e05286cd4a257d80c3f0407b350df7dd"
-
-if (!file.exists("household_power_consumption.txt")|md5sum("household_power_consumption.txt") != filechecksum) {
+if (!file.exists("household_power_consumption.txt")|md5sum("household_power_consumption.txt") != "e05286cd4a257d80c3f0407b350df7dd") {
   # download the file and unzip it.
   message("downloading file")
   download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "exdata_data_household_power_consumption.zip")
