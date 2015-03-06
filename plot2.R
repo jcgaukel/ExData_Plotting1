@@ -1,0 +1,5 @@
+source("LoadData.R")
+hpcdata <- loaddata()
+png(filename = "plot2.png", height = 480, width= 480, units = "px")
+plot(x=hpcdata$Time, y=hpcdata$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab = "")
+dev.off()
